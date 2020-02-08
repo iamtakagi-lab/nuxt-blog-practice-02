@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+html {
+  background: #F0F0F0;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.flex {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.main-container {
+  width: calc(100% - 360px);
+}
+
+.side-container {
+  width: 360px;
+}
+
+@media screen and (max-width: 768px) {
+  .flex {
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+  }
+  .main-container,
+  .side-container {
+    width: 100%;
+  }
+}
+
+.no-decoration {
+  text-decoration: none !important;
+  
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+.no-selection {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.content-title {
+	color: #444;
+	font-size: 24px;
+	display: flex;
+  align-items: center;
+  margin-top: 20px;
+
+  &:before, &:after {
+  	content: "";
+	  flex-grow: 1;
+	  height: 1px;
+	  background: grey;
+	  display: block;
+  }
+  &:before {
+    margin-right: .4em;
+  }
+  &:after {
+	  margin-left: .4em;
+  }
+}
+
+
+
+.box {
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 500ms;
+  background: white;
+  overflow: hidden;
+  box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
+  -webkit-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
+  -moz-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
+  text-align: center;
+
+  @media screen and (max-width: 768px){
+    padding: 5px;
+    margin: 10px;
+  }
+
+  .box-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1em;
+    font-size: 20px;
+    color: black;
+
+    &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -11px;/*線の上下位置*/
+    display: inline-block;
+    width: 80%;/*線の長さ*/
+    height: 4px;/*線の太さ*/
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);/*位置調整*/
+    background-color: rgb(35, 120, 218);/*線の色*/
+    border-radius: 10px;/*線の丸み*/
+    }
+  }
+
+  p {
+    padding: 2px;
+  }
+}
+
+
+.article {
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 500ms;
+  background: white;
+  overflow: hidden;
+
+  box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
+  -webkit-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
+  -moz-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
+
+  @media screen and (max-width: 768px){
+    padding: 5px;
+    margin: 10px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  .image, img{
+    max-width: 100%;
+		max-height: auto;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 10px; 
+    object-fit: cover;
+
+    @media screen and (max-width: 768px){
+      max-width: 120px;
+    }
+  }
+
+  .text-content {
+    margin-left: 10px;
+
+    @media screen and (max-width: 768px){
+      margin-left: 10px;
+      font-size: 10px;
+    }
+  
+    .title {
+      color: black;
+      font-size: 16px;
+
+      @media screen and (max-width: 768px){
+        font-size: 12px;
+      }
+    }
+
+    .description {
+      color: black;
+      font-size: 15px;
+
+      @media screen and (max-width: 768px){
+        display: none;
+      }
+    }
+
+    .tags {
+      margin-top: 20px;
+    }
+
+    .publish-date {
+      color: grey;
+      font-size: 12px;
+
+      @media screen and (max-width: 768px){
+        font-size: 9px;
+      }
+    }
+  }
+}
+
+.category {
+  font-size: 12px;
+  text-decoration: none !important;
+  padding: 3px 15px;
+  border-radius: 10px;
+  background: #2d8fdd;
+  transition: .4s;
+  color: white;
+  user-select: none; /* CSS3 */
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-select: none; /* Safari、Chromeなど */
+  -ms-user-select: none; /* IE10かららしい */
+
+  @media screen and (max-width: 768px){
+    font-size: 9px;
+  }
+
+  &:hover {
+    opacity: 0.9;
+    text-decoration: none !important;
+  }
+}
+
+.tag {
+  width: auto;
+  padding: 2px 7px;
+  border-color: #2d8fdd;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  text-decoration: none !important;
+  transition: .4s;
+  color: #2d8fdd;
+  user-select: none; /* CSS3 */
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-select: none; /* Safari、Chromeなど */
+  -ms-user-select: none; /* IE10かららしい */
+
+  &:hover {
+    color: #ff5e3a;
+    border-color: #ff5e3a;
+    transition: all 0.2s linear;
+    text-decoration: none !important;
+  }
+
+  font-size: 13px;
+}
+
+.pv {
+  font-size: 13px;
+  text-decoration: none !important;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background: #f0428b;
+  transition: .4s;
+  color: white;
+  user-select: none; /* CSS3 */
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-select: none; /* Safari、Chromeなど */
+  -ms-user-select: none; /* IE10かららしい */
+
+  @media screen and (max-width: 768px){
+    font-size: 9px;
+  }
+
+  &:hover {
+    opacity: 0.9;
+    text-decoration: none !important;
+  }
+}
+
+.top-post {
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding: 10px;
+  transition: 500ms;
+  background: white;
+  overflow: hidden;
+
+  box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
+  -webkit-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
+  -moz-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
+
+  @media screen and (max-width: 768px){
+    padding: 5px;
+    margin: 10px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  .image, img{
+    max-width: 140px;
+		max-height: auto;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 10px; 
+    object-fit: cover;
+
+    @media screen and (max-width: 768px){
+      max-width: 120px;
+    }
+  }
+
+  .text-content {
+    margin-left: 10px;
+
+    @media screen and (max-width: 768px){
+      margin-left: 10px;
+      font-size: 10px;
+    }
+  
+    .title {
+      color: black;
+      font-size: 12px;
+
+      @media screen and (max-width: 768px){
+        font-size: 12px;
+      }
+    }
+
+    .publish-date {
+      color: grey;
+      font-size: 12px;
+
+      @media screen and (max-width: 768px){
+        font-size: 9px;
+      }
+    }
+  }
+}

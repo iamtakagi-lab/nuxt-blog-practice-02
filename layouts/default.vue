@@ -10,17 +10,21 @@
 
       <Aside/>
     </div>
+
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Header from "~/components/layout/Header";
 import Aside from "~/components/layout/Aside";
+import Footer from "~/components/layout/Footer"
 
 export default {
   components: {
     Header,
-    Aside
+    Aside,
+    Footer
   }
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <PostPreview
-      v-for="(post, i) in this.$store.state.posts.slice(getStart, getCurrent)"
+      v-for="(post, i) in $store.state.posts.slice(getStart, getCurrent)"
       :key="i"
       :post="post"
     />
@@ -15,7 +15,7 @@
       >前のページ</nuxt-link>
 
       <nuxt-link
-        v-show="(this.currentPage < Math.ceil(this.$store.state.posts.length / this.parPage))"
+        v-show="(this.currentPage < Math.ceil($store.state.posts.length / this.parPage))"
         class="paginate-btn"
         :to="`/?page=${getNext}`"
         @click.native="clickCallback(getNext)"
@@ -41,7 +41,7 @@ export default {
     };
   },
   computed: {
-    ...mapState('posts'),
+    ...mapState(['posts']),
 
     getCurrent: function() {
       return this.currentPage * this.parPage;

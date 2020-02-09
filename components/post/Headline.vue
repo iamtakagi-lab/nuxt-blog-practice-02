@@ -10,7 +10,8 @@
         <p
           class="date"
           v-show="post.fields.lastUpdateDate"
-        >更新: {{ new Date(post.fields.lastUpdateDate) | format-date }}</p>
+        >更新: {{ new Date(post.fields.lastUpdateDate) | format-date }} 
+        ({{ new Date(post.fields.lastUpdateDate) | from-now}})</p>
       </div>
 
       <h1 class="headline-title">{{post.fields.title}}</h1>

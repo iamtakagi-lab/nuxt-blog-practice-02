@@ -23,6 +23,7 @@ export default {
 <style scoped lang = "scss">
 .post {
   margin-top: 10px;
+  margin-bottom: 50px; 
   background: white;
   max-width: 100%;
   border-radius: 1em;

@@ -8,7 +8,7 @@ const config = require('../nuxt.config.js')
 config.dev = process.env.NODE_ENV !== 'production'
 
 //ルーティング
-app.use('/api/', require('./router'));
+app.use('/api/', require('./apiRouter'));
 
 async function start () {
   // Init Nuxt.js

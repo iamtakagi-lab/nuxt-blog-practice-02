@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap");
 
 * {
   padding: 0;
@@ -12,8 +12,8 @@
 }
 
 html {
-  background: #F0F0F0;
-  font-family: 'Noto Sans JP', sans-serif;
+  background: #f0f0f0;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 .flex {
@@ -28,11 +28,11 @@ html {
 }
 
 .main-container {
-  width: calc(100% - 360px);
+  max-width: calc(100% - 300px);
 }
 
-.side-container {
-  width: 360px;
+.aside-container {
+  max-width: 300px;
 }
 
 @media screen and (max-width: 768px) {
@@ -40,17 +40,17 @@ html {
     -ms-flex-direction: column;
     -webkit-flex-direction: column;
     flex-direction: column;
-    width: 100%;
+    max-width: 100%;
   }
   .main-container,
   .side-container {
-    width: 100%;
+    max-width: 100%;
   }
 }
 
 .no-decoration {
   text-decoration: none !important;
-  
+
   &:hover {
     text-decoration: none !important;
   }
@@ -63,46 +63,53 @@ html {
 }
 
 .content-title {
-	color: #444;
-	font-size: 24px;
-	display: flex;
+  color: #444;
+  font-size: 24px;
+  display: flex;
   align-items: center;
   margin-top: 20px;
 
-  &:before, &:after {
-  	content: "";
-	  flex-grow: 1;
-	  height: 1px;
-	  background: grey;
-	  display: block;
+  &:before,
+  &:after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background: grey;
+    display: block;
   }
   &:before {
-    margin-right: .4em;
+    margin-right: 0.4em;
   }
   &:after {
-	  margin-left: .4em;
+    margin-left: 0.4em;
   }
 }
 
+.image,
+img　 {
+  max-width: 100px;
+  max-height: auto;
+  vertical-align: middle;
+  position: relative;
 
+  @media screen and (max-width: 768px) {
+    // max-width: 120px;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    position: relative;
+  }
+}
 
 .box {
   margin-top: 10px;
   margin-left: 10px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 1rem;
   transition: 500ms;
   background: white;
   overflow: hidden;
-  box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
-  -webkit-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
-  -moz-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
   text-align: center;
-
-  @media screen and (max-width: 768px){
-    padding: 5px;
-    margin: 10px;
-  }
 
   .box-title {
     position: relative;
@@ -112,75 +119,113 @@ html {
     color: black;
 
     &:before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -11px;/*線の上下位置*/
-    display: inline-block;
-    width: 80%;/*線の長さ*/
-    height: 4px;/*線の太さ*/
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);/*位置調整*/
-    background-color: rgb(35, 120, 218);/*線の色*/
-    border-radius: 10px;/*線の丸み*/
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -11px; /*線の上下位置*/
+      display: inline-block;
+      width: 80%; /*線の長さ*/
+      height: 4px; /*線の太さ*/
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%); /*位置調整*/
+      background-color: rgb(35, 120, 218); /*線の色*/
+      border-radius: 10px; /*線の丸み*/
     }
   }
 
-  p {
-    padding: 2px;
+  .top-post {
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    transition: 500ms;
+    background: white;
+    overflow: hidden;
+
+    box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
+    -webkit-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
+    -moz-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
+
+    @media screen and (max-width: 768px) {
+      padding: 5px;
+      margin: 10px;
+      flex-direction: column;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+
+    .text-content {
+      margin-left: 10px;
+
+      @media screen and (max-width: 768px) {
+        margin-left: 10px;
+        font-size: 10px;
+      }
+
+      .title {
+        color: black;
+        font-size: 12px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 12px;
+        }
+      }
+
+      .publish-date {
+        color: grey;
+        font-size: 12px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 9px;
+        }
+      }
+    }
   }
 }
 
-
+/**/
 .article {
   display: flex;
-  margin-bottom: 20px;
   margin-top: 10px;
   padding: 10px;
-  border-radius: 10px;
   transition: 500ms;
   background: white;
-  overflow: hidden;
+  border-radius: 1em;
+  max-width: 100%;
 
-  box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
-  -webkit-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
-  -moz-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
-
-  @media screen and (max-width: 768px){
-    padding: 5px;
-    margin: 10px;
+  @media screen and (max-width: 768px) {
+  
   }
 
   &:hover {
     opacity: 0.8;
   }
 
-  .image, img{
-    max-width: 100%;
-		max-height: auto;
+  .image,
+  img　 {
+    max-width: 270px;
+    max-height: 100%;
     vertical-align: middle;
     position: relative;
-    border-radius: 10px; 
     object-fit: cover;
-
-    @media screen and (max-width: 768px){
-      max-width: 120px;
-    }
   }
 
   .text-content {
     margin-left: 10px;
 
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 768px) {
       margin-left: 10px;
       font-size: 10px;
     }
-  
+
     .title {
       color: black;
       font-size: 16px;
 
-      @media screen and (max-width: 768px){
+      @media screen and (max-width: 768px) {
         font-size: 12px;
       }
     }
@@ -189,7 +234,7 @@ html {
       color: black;
       font-size: 15px;
 
-      @media screen and (max-width: 768px){
+      @media screen and (max-width: 768px) {
         display: none;
       }
     }
@@ -202,7 +247,7 @@ html {
       color: grey;
       font-size: 12px;
 
-      @media screen and (max-width: 768px){
+      @media screen and (max-width: 768px) {
         font-size: 9px;
       }
     }
@@ -215,15 +260,15 @@ html {
   padding: 3px 15px;
   border-radius: 10px;
   background: #2d8fdd;
-  transition: .4s;
+  transition: 0.4s;
   color: white;
   user-select: none; /* CSS3 */
   -moz-user-select: none; /* Firefox */
   -webkit-user-select: none; /* Safari、Chromeなど */
   -ms-user-select: none; /* IE10かららしい */
 
-  @media screen and (max-width: 768px){
-    font-size: 9px;
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
   }
 
   &:hover {
@@ -240,7 +285,7 @@ html {
   border-width: 1px;
   border-radius: 15px;
   text-decoration: none !important;
-  transition: .4s;
+  transition: 0.4s;
   color: #2d8fdd;
   user-select: none; /* CSS3 */
   -moz-user-select: none; /* Firefox */
@@ -248,8 +293,8 @@ html {
   -ms-user-select: none; /* IE10かららしい */
 
   &:hover {
-    color: #ff5e3a;
-    border-color: #ff5e3a;
+    color: black;
+    border-color: black;
     transition: all 0.2s linear;
     text-decoration: none !important;
   }
@@ -260,17 +305,17 @@ html {
 .pv {
   font-size: 13px;
   text-decoration: none !important;
-  padding: 5px 15px;
+  padding: 3px;
   border-radius: 5px;
   background: #f0428b;
-  transition: .4s;
+  transition: 0.4s;
   color: white;
   user-select: none; /* CSS3 */
   -moz-user-select: none; /* Firefox */
   -webkit-user-select: none; /* Safari、Chromeなど */
   -ms-user-select: none; /* IE10かららしい */
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     font-size: 9px;
   }
 
@@ -280,65 +325,29 @@ html {
   }
 }
 
-.top-post {
-  display: flex;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  padding: 10px;
-  transition: 500ms;
-  background: white;
-  overflow: hidden;
+.paginate-btn {
+  max-width: 100px;
+  position: relative;
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 12px;
+  text-decoration: none !important;
+  padding: 3px 15px;
+  border-radius: 10px;
+  background: #444;
+  transition: 0.4s;
+  color: white;
+  user-select: none; /* CSS3 */
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-select: none; /* Safari、Chromeなど */
+  -ms-user-select: none; /* IE10かららしい */
 
-  box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
-  -webkit-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
-  -moz-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
-
-  @media screen and (max-width: 768px){
-    padding: 5px;
-    margin: 10px;
+  @media screen and (max-width: 768px) {
+    font-size: 9px;
   }
 
   &:hover {
-    opacity: 0.8;
-  }
-
-  .image, img{
-    max-width: 140px;
-		max-height: auto;
-    vertical-align: middle;
-    position: relative;
-    border-radius: 10px; 
-    object-fit: cover;
-
-    @media screen and (max-width: 768px){
-      max-width: 120px;
-    }
-  }
-
-  .text-content {
-    margin-left: 10px;
-
-    @media screen and (max-width: 768px){
-      margin-left: 10px;
-      font-size: 10px;
-    }
-  
-    .title {
-      color: black;
-      font-size: 12px;
-
-      @media screen and (max-width: 768px){
-        font-size: 12px;
-      }
-    }
-
-    .publish-date {
-      color: grey;
-      font-size: 12px;
-
-      @media screen and (max-width: 768px){
-        font-size: 9px;
-      }
-    }
+    opacity: 0.9;
+    text-decoration: none !important;
   }
 }

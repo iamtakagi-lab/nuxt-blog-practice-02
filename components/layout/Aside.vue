@@ -1,0 +1,91 @@
+<template>
+  <aside class="aside-container">
+
+    <div class="box">
+      <div class="box-title">月間ランキング</div>
+ 
+        <nuxt-link
+          v-for="(topPost, i) in topPosts"
+          :key="i"
+          :to="linkTo('posts', topPost.slug)"
+          class="top-post no-decoration no-selection"
+        >
+        
+          <div class="image">
+            <img :src="topPost.post.fields.heroImage.fields.file.url + '?fit=scale&w=100'" />
+
+            <p
+              class="pv"
+              style="
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          display: inline-block;"
+            >{{topPost.pv}}PV</p>
+          </div>
+          
+
+          <div class="text-content">
+            <h2 class="title">{{ topPost.post.fields.title }}</h2>
+
+            <p class="publish-date">{{ new Date(topPost.post.fields.publishDate) | format-date }}</p>
+          </div>
+      </nuxt-link>
+
+
+    </div>
+
+    <div class="box">
+      <div class="box-title">タグ</div>
+      <p>
+        <nuxt-link
+          v-for="(tag, i) in tags"
+          :key="i"
+          class="tag"
+          style="
+      position: relative;
+      display: inline-block;
+      margin-right: 4px;
+      margin-bottom: 2px;"
+          :to="linkTo('tags', tag)"
+        >
+          <font-awesome-icon icon="tags" style="font-size: 13px" />
+          {{tag}}
+        </nuxt-link>
+      </p>
+    </div>
+
+    <div class="box">
+      <div class="box-title">カテゴリ</div>
+      <p>
+        <nuxt-link
+          v-for="(category, i) in categories"
+          :key="i"
+          :to="linkTo('categories', category)"
+          class="category"
+          style="
+      position: relative;
+      display: inline-block;
+      margin-right: 4px;
+      margin-bottom: 2px;"
+        >{{category}}</nuxt-link>
+      </p>
+    </div>
+  </aside>
+</template>
+
+<script>
+import { mapState, mapGetters } from "vuex";
+export default {
+  middleware: "getContentful",
+  computed: {
+    ...mapState(["tags"]),
+    ...mapState(["categories"]),
+    ...mapState(["topPosts"]),
+    ...mapGetters(["linkTo"])
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+</style>

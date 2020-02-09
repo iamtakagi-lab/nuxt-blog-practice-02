@@ -1,4 +1,4 @@
-import defaultEyeCatch from '~/assets/defaultEyeCatch.jpg'
+import defaultEyeCatch from '~/assets/img/jpg/defaultEyeCatch.jpg'
 import {createClient} from '../plugins/contentful'
 
 export const state = () => ({
@@ -20,6 +20,18 @@ export const getters = {
 
   linkTo: () => (name, slug) => {
     return { name: `${name}-slug`, params: { slug: slug } }
+  },
+
+  postBySlug: state => (paramSlug) => {
+    for (let i = 0; i < state.posts.length; i++) {
+      const post = state.posts[i];
+      const slug = post.fields.slug;
+      if (slug !== null && slug !== undefined) {
+        if(slug === paramSlug){
+          return post;
+        }
+      }
+    }
   },
 
   postsByCategory: state => (currentCategory) => {
@@ -148,7 +160,7 @@ export const actions = {
       state.topPosts.push({post: postBySlug(slug), slug: slug, pv: pv})
     }
 
-    console.log(state.topPosts)
+    //console.log(state.topPosts)
 
     //console.log(state.topPosts);
     //console.log(resdata.reports[0].data.rows);

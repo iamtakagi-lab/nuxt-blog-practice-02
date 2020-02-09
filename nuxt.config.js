@@ -37,7 +37,8 @@ module.exports = {
   */
   css: [
     {src: '~/assets/scss/style.scss', lang: 'scss'},
-    'highlight.js/styles/agate.css'
+    {src: '~/assets/scss/markdown.scss', lang: 'scss'},
+    'highlight.js/styles/agate.css',
   ],
 
   markdownit: {

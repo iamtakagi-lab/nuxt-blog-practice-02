@@ -2,57 +2,50 @@
   <header class="header">
     
     <div class="brand-wrapper">
-        <nuxt-link to="/" class="brand-name">にょーん</nuxt-link>
-      </div>
+      <BrandAnimation :text="brand" class="brand-name"/>
+    </div>
 
   </header>
 </template>
 
 <script>
 import $ from "jquery";
+import BrandAnimation from "~/components/layout/BrandAnimation";
 
 export default {
-  name: "Header"
+  name: "Header",
+  components: {
+    BrandAnimation
+  },
+  data() {
+    return {
+      brand: 'manj!fun',
+    }
+  },
+
 };
 </script>
 
 <style scoped lang = "scss">
-@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
 
 .header {
-  border-radius: 10px;
-  position: sticky;
-  top: 0;
-  height: 60px;
-  max-width: 100%;
-  text-align: center;
   margin: 0 auto;
+  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+  height: 80px;
+  max-width: 1080px;
+  text-align: center;
   background: white;
   z-index: 3;
-  box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
-  -webkit-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
-  -moz-box-shadow: 0px 1px 1px -1px rgb(78, 77, 77);
+  overflow: hidden;
 
   .brand-wrapper {
     text-align: center;
-    height: 60px;
-    line-height: 60px;
+    height: 80px;
+    line-height: 80px;
     z-index: 10000;
     margin: 0 auto;
-
-    .brand-name {
-      text-align: center;
-      font-family: "M PLUS Rounded 1c", sans-serif;
-      font-size: 32px;
-      font-weight: 700;
-      color: black;
-      cursor: pointer;
-      text-decoration: none !important;
-
-      &:hover {
-        text-decoration: none !important;
-      }
-    }
   }
 
   .hamburger-wrapper {

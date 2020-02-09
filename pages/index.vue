@@ -1,126 +1,76 @@
 <template>
-  <div class="flex">
-    <main class="main-container">
+  <div>
+    <PostPreview
+      v-for="(post, i) in this.$store.state.posts.slice(getStart, getCurrent)"
+      :key="i"
+      :post="post"
+    />
+
+    <div>
       <nuxt-link
-        class="article no-decoration no-selection"
-        v-for="(post, i) in postsByLimit(6)"
-        :key="i"
-        :to="linkTo('posts', post.fields.slug)"
-      >
-        <div class="image">
-          <img :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=230'" />
-          <p
-            class="category"
-            style="
-          position: absolute;
-          top: 5px;
-          left: 5px;
-          display: inline-block;"
-          >{{post.fields.category}}</p>
-        </div>
+        v-show="hasPrev"
+        class="paginate-btn"
+        :to="`/?page=${getPrev}`"
+        @click.native="clickCallback(getPrev)"
+      >前のページ</nuxt-link>
 
-        <div class="text-content">
-          <h2 class="title">{{ post.fields.title }}</h2>
-          <p
-            class="description"
-          >{{ post.fields.description.length >= 30 ? post.fields.description.substring(0, 30) + "..." : post.fields.description }}</p>
-          <p class="publish-date">{{ new Date(post.fields.publishDate) | format-date }}</p>
-          <div class="tags">
-            <p
-              v-for="(tag, i) in post.fields.tags"
-              :key="i"
-              class="tag"
-              style="
-           position: relative;
-           display: inline-block;
-           margin: 4px;"
-            >{{ tag }}</p>
-          </div>
-        </div>
-      </nuxt-link>
-    </main>
-
-    <aside class="side-container">
-
-      <div class="box">
-        <div class="box-title">今月の人気記事</div>
-        <nuxt-link v-for="(topPost, i) in topPosts" :key="i" :to="linkTo('posts', topPost.slug)"  class="top-post no-decoration no-selection">
-          <div class="image">
-          <img :src="topPost.post.fields.heroImage.fields.file.url + '?fit=scale&w=230'" />
-          
-          <p
-            class="pv"
-            style="
-          position: absolute;
-          top: 4px;
-          left: 4px;
-          display: inline-block;"
-          >{{topPost.pv}}PV</p>
-        </div>
-
-
-        <div class="text-content">
-
-          <h2 class="title">{{ topPost.post.fields.title }}</h2>
-    
-          <p class="publish-date">{{ new Date(topPost.post.fields.publishDate) | format-date }}</p>
-          
-        </div>
-        </nuxt-link>
-      </div>
-
-      <div class="box">
-        <div class="box-title">タグ</div>
-        <p>
-          <nuxt-link
-            v-for="(tag, i) in tags"
-            :key="i"
-            class="tag"
-            style="
-      position: relative;
-      display: inline-block;
-      margin-right: 4px;
-      margin-bottom: 2px;"
-      :to="linkTo('tags', tag)"
-          >{{tag}}</nuxt-link>
-        </p>
-      </div>
-
-      <div class="box">
-        <div class="box-title">カテゴリ</div>
-        <p>
-          <nuxt-link
-            v-for="(category, i) in categories"
-            :key="i"
-            :to="linkTo('categories', category)"
-            class="category"
-            style="
-      position: relative;
-      display: inline-block;
-      margin-right: 4px;
-      margin-bottom: 2px;"
-          >{{category}}</nuxt-link>
-        </p>
-      </div>
-    </aside>
+      <nuxt-link
+        v-show="(this.currentPage < Math.ceil(this.$store.state.posts.length / this.parPage))"
+        class="paginate-btn"
+        :to="`/?page=${getNext}`"
+        @click.native="clickCallback(getNext)"
+      >次のページ</nuxt-link>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters } from "vuex";
-
+import PostPreview from "~/components/layout/PostPreview";
 export default {
   middleware: "getContentful",
-  computed: {
-    ...mapState(["tags"]),
-    ...mapState(["categories"]),
-    ...mapState(["topPosts"]),
-    ...mapGetters(["postsByLimit"]),
-    ...mapGetters(["linkTo"]),
-    ...mapGetters(["postBySlug"])
+  async asyncData({ params, query, error }) {
+    return {
+      slug: params.slug,
+      currentPage: query["page"] === undefined ? 1 : Number(query["page"])
+    };
   },
-  components: {},
-  methods: {}
+  data() {
+    return {
+      parPage: 6
+    };
+  },
+  computed: {
+    ...mapState('posts'),
+
+    getCurrent: function() {
+      return this.currentPage * this.parPage;
+    },
+
+    getStart: function() {
+      let current = this.currentPage * this.parPage;
+      return current - this.parPage;
+    },
+
+    getPrev: function() {
+      return this.currentPage - 1;
+    },
+
+    getNext: function() {
+      return this.currentPage + 1;
+    },
+
+    hasPrev: function() {
+      return this.currentPage > 1;
+    }
+  },
+  methods: {
+    clickCallback(page) {
+      this.currentPage = Number(page);
+      this.$router.push(`/?page=${page}`);
+    }
+  },
+  components: { PostPreview }
 };
 </script>
 

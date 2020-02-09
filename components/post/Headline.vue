@@ -102,12 +102,19 @@ export default {
   }
 
   .top {
-    display: inline-flex;
+
+    position: relative;
+
 
     .date {
-      margin-left: 10px;
+      display: inline-flex;
+      margin-top: 10px;
       color: grey;
       font-size: 15px;
+
+       @media screen and (max-width: 768px) {
+         font-size: 12px;
+       }
     }
   }
 }

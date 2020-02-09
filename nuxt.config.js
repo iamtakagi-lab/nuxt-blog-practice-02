@@ -93,7 +93,13 @@ module.exports = {
     '@nuxtjs/pwa',
     'nuxt-fontawesome',
     '@nuxtjs/markdownit',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-158068455-1'
+    }],
+    ['@nuxtjs/google-adsense', {
+      id: 'ca-pub-7932483299460648'
+    }],
   ],
   
   /*

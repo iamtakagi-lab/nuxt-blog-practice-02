@@ -12,7 +12,7 @@
         >
         
           <div class="image">
-            <img :src="topPost.post.fields.heroImage.fields.file.url + '?fit=scale&w=100'" />
+            <img :src="topPost.post.fields.heroImage.fields.file.url + '?fit=scale&w=100'"/>
 
             <p
               class="pv"

@@ -1,7 +1,7 @@
 <template>
   <div>
     <nuxt-link to="/">
-      <span v-for="(t, index) in text" :key="index" v-text="t" class="item delay-anime brand" />
+      <h1 v-for="(t, index) in text" :key="index" v-text="t" class="brand delay-anime" />
     </nuxt-link>
   </div>
 </template>
@@ -20,29 +20,25 @@ export default {
   }
 }
 
-.item {
+.brand {
   display: inline-block;
   min-width: 0.3em;
-  font-size: 2rem;
+  font-size: 30px;
   animation: text-in 0.8s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s backwards;
-}
-
-for co in 0 .. 12 {
-  .delay-anime:nth-child({co + 1}) {
-    animation-delay: co * 100ms + 200ms;
-  }
-}
-
-.brand {
   text-align: center;
   font-family: 'Fredoka One', cursive;
-  font-size: 32px;
   color: black;
   cursor: pointer;
   text-decoration: none !important;
 
   &:hover {
     text-decoration: none !important;
+  }
+}
+
+for co in 0 .. 12 {
+  .delay-anime:nth-child({co + 1}) {
+    animation-delay: co * 100ms + 200ms;
   }
 }
 </style>

@@ -2,7 +2,7 @@
   <div>
     <nuxt-link class="article no-decoration no-selection" :to="linkTo('posts', post.fields.slug)">
       <div class="image">
-        <img :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=270'"/>
+        <img :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=1920&h=1080'" class="image"/>
         <p
           class="category"
           style="

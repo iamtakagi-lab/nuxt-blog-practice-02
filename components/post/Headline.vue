@@ -32,7 +32,7 @@
       </div>
     </div>
 
-     <ShareButtons/>
+     <ShareButtons :post="post"/>
 
       <img
         :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=1920&h=1080'"

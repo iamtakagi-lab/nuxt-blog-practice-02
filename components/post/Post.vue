@@ -3,7 +3,7 @@
     <div class="post">
       <Headline :post="post"/>
       <Bodytext :post="post"/>
-      <Footerline/>
+      <Footerline :post="post"/>
     </div>
   </div>
 </template>

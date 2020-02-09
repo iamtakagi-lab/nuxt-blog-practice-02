@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="content-title">カテゴリ: {{slug}}</div>
+    <div class="content-title">カテゴリ: {{slug}} ({{postsByCategory(slug).length}}件)</div>
 
     <PostPreview
       v-for="(post, i) in postsByCategory(slug).slice(getStart, getCurrent)"
@@ -8,7 +8,7 @@
       :post="post"
     />
 
-    <div class="flex">
+    <div>
       <nuxt-link
         v-show="hasPrev"
         class="paginate-btn"

@@ -186,6 +186,18 @@ img　 {
   }
 }
 
+.image, img　{
+    height: auto;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 10px;
+    max-width: 220px;
+
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
+    }
+}
+
 /**/
 .article {
   display: flex;
@@ -197,20 +209,12 @@ img　 {
   max-width: 100%;
 
   @media screen and (max-width: 768px) {
-  
+    position: relative;
+    flex-direction: column;
   }
 
   &:hover {
     opacity: 0.8;
-  }
-
-  .image,
-  img　 {
-    max-width: 270px;
-    max-height: 100%;
-    vertical-align: middle;
-    position: relative;
-    object-fit: cover;
   }
 
   .text-content {
@@ -219,6 +223,7 @@ img　 {
     @media screen and (max-width: 768px) {
       margin-left: 10px;
       font-size: 10px;
+      flex-direction: column;
     }
 
     .title {

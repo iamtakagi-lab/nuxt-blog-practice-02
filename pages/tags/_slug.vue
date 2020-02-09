@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="content-title">タグ: {{slug}}</div>
+    <div class="content-title">タグ: {{slug}} ({{postsByTag(slug).length}}件)</div>
 
     <PostPreview
       v-for="(post, i) in postsByTag(slug).slice(getStart, getCurrent)"

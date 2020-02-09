@@ -1,5 +1,6 @@
-
-
+.markdown-body {
+  padding: 20px;
+}
 
 .markdown-body .octicon {
   display: inline-block;
@@ -23,7 +24,7 @@
 .markdown-body h3 .octicon-link,
 .markdown-body h4 .octicon-link,
 .markdown-body h5 .octicon-link,
-.markdown-body h6 .octicon-link { 
+.markdown-body h6 .octicon-link {
   //color: #1b1f23;
   vertical-align: middle;
   visibility: hidden;
@@ -50,9 +51,8 @@
 .markdown-body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  color: #24292e;
+  color: black;
   line-height: 1.5;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
@@ -206,13 +206,13 @@
 
 .markdown-body h1 {
   font-size: 1em;
-  margin: .67em 0;
+  margin: 0.67em 0;
 }
 
 .markdown-body code,
 .markdown-body kbd,
 .markdown-body pre {
-  font-family: monospace,monospace;
+  font-family: monospace, monospace;
   font-size: 1em;
 }
 
@@ -231,7 +231,7 @@
   overflow: visible;
 }
 
-.markdown-body [type=checkbox] {
+.markdown-body [type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -376,7 +376,7 @@
 
 .markdown-body code,
 .markdown-body pre {
-  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
   font-size: 12px;
   color: #e3e3e3;
   background: #364549;
@@ -395,95 +395,95 @@
 }
 
 .markdown-body .border {
-  border: 1px solid #e1e4e8!important;
+  border: 1px solid #e1e4e8 !important;
 }
 
 .markdown-body .border-0 {
-  border: 0!important;
+  border: 0 !important;
 }
 
 .markdown-body .border-bottom {
-  border-bottom: 1px solid #e1e4e8!important;
+  border-bottom: 1px solid #e1e4e8 !important;
 }
 
 .markdown-body .rounded-1 {
-  border-radius: 3px!important;
+  border-radius: 3px !important;
 }
 
 .markdown-body .bg-white {
-  background-color: #fff!important;
+  background-color: #fff !important;
 }
 
 .markdown-body .bg-gray-light {
-  background-color: #fafbfc!important;
+  background-color: #fafbfc !important;
 }
 
 .markdown-body .text-gray-light {
-  color: #6a737d!important;
+  color: #6a737d !important;
 }
 
 .markdown-body .mb-0 {
-  margin-bottom: 0!important;
+  margin-bottom: 0 !important;
 }
 
 .markdown-body .my-2 {
-  margin-bottom: 8px!important;
-  margin-top: 8px!important;
+  margin-bottom: 8px !important;
+  margin-top: 8px !important;
 }
 
 .markdown-body .pl-0 {
-  padding-left: 0!important;
+  padding-left: 0 !important;
 }
 
 .markdown-body .py-0 {
-  padding-bottom: 0!important;
-  padding-top: 0!important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
 }
 
 .markdown-body .pl-1 {
-  padding-left: 4px!important;
+  padding-left: 4px !important;
 }
 
 .markdown-body .pl-2 {
-  padding-left: 8px!important;
+  padding-left: 8px !important;
 }
 
 .markdown-body .py-2 {
-  padding-bottom: 8px!important;
-  padding-top: 8px!important;
+  padding-bottom: 8px !important;
+  padding-top: 8px !important;
 }
 
 .markdown-body .pl-3,
 .markdown-body .px-3 {
-  padding-left: 16px!important;
+  padding-left: 16px !important;
 }
 
 .markdown-body .px-3 {
-  padding-right: 16px!important;
+  padding-right: 16px !important;
 }
 
 .markdown-body .pl-4 {
-  padding-left: 24px!important;
+  padding-left: 24px !important;
 }
 
 .markdown-body .pl-5 {
-  padding-left: 32px!important;
+  padding-left: 32px !important;
 }
 
 .markdown-body .pl-6 {
-  padding-left: 40px!important;
+  padding-left: 40px !important;
 }
 
 .markdown-body .f6 {
-  font-size: 12px!important;
+  font-size: 12px !important;
 }
 
 .markdown-body .lh-condensed {
-  line-height: 1.25!important;
+  line-height: 1.25 !important;
 }
 
 .markdown-body .text-bold {
-  font-weight: 600!important;
+  font-weight: 600 !important;
 }
 
 .markdown-body:before {
@@ -497,12 +497,12 @@
   display: table;
 }
 
-.markdown-body>:first-child {
-  margin-top: 0!important;
+.markdown-body > :first-child {
+  margin-top: 0 !important;
 }
 
-.markdown-body>:last-child {
-  margin-bottom: 0!important;
+.markdown-body > :last-child {
+  margin-bottom: 0 !important;
 }
 
 .markdown-body a:not([href]) {
@@ -524,22 +524,22 @@
 .markdown-body hr {
   background-color: #e1e4e8;
   border: 0;
-  height: .25em;
+  height: 0.25em;
   margin: 24px 0;
   padding: 0;
 }
 
 .markdown-body blockquote {
-  border-left: .25em solid #dfe2e5;
+  border-left: 0.25em solid #dfe2e5;
   color: #6a737d;
   padding: 0 1em;
 }
 
-.markdown-body blockquote>:first-child {
+.markdown-body blockquote > :first-child {
   margin-top: 0;
 }
 
-.markdown-body blockquote>:last-child {
+.markdown-body blockquote > :last-child {
   margin-bottom: 0;
 }
 
@@ -562,17 +562,14 @@
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  padding: 0.5em;/*文字周りの余白*/
-  color: #494949;/*文字色*/
-  background: white;/*背景色*/
-  border-left: solid 5px #f85361;/*左側の線*/
+  padding: 0.25em 0.5em;/*上下 左右の余白*/
+  background: transparent;/*背景透明に*/
+  border-left: solid 5px #2d8fdd;/*左線*/
 }
 
 .markdown-body h1 {
-  padding: 0.5em;/*文字周りの余白*/
-  color: #494949;/*文字色*/
-  background: white; /*背景色*/
-  border-left: solid 5px #2d8fdd;/*左側の線*/
+  padding-bottom: .5em; /*下の余白*/
+  border-bottom: solid 3px #24292e;  /*下線（線種 太さ 色）*/
 }
 
 .markdown-body h1,
@@ -588,18 +585,19 @@
 }
 
 .markdown-body h1 {
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin-top: 65px;
 }
 
 .markdown-body h1,
 .markdown-body h2 {
   //border-bottom: 1px solid #eaecef;
-  padding-bottom: .3em;
+  padding-bottom: 0.3em;
 }
 
 .markdown-body h2 {
-  font-size: 1em;
+  font-size: 1.1em;
+  margin-top: 50px;
 }
 
 .markdown-body h3 {
@@ -611,12 +609,12 @@
 }
 
 .markdown-body h5 {
-  font-size: .875em;
+  font-size: 0.875em;
 }
 
 .markdown-body h6 {
   color: #6a737d;
-  font-size: .85em;
+  font-size: 0.85em;
 }
 
 .markdown-body ol,
@@ -636,12 +634,12 @@
   word-wrap: break-all;
 }
 
-.markdown-body li>p {
+.markdown-body li > p {
   margin-top: 16px;
 }
 
-.markdown-body li+li {
-  margin-top: .25em;
+.markdown-body li + li {
+  margin-top: 0.25em;
 }
 
 .markdown-body dl {
@@ -690,13 +688,15 @@
   background-color: #fff;
   box-sizing: content-box;
   max-width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.markdown-body img[align=right] {
+.markdown-body img[align="right"] {
   padding-left: 20px;
 }
 
-.markdown-body img[align=left] {
+.markdown-body img[align="left"] {
   padding-right: 20px;
 }
 
@@ -704,11 +704,10 @@
   //border-radius: 10px;
 }
 
-
 .markdown-body .commit-tease-sha {
   color: #444d56;
   display: inline-block;
-  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
   font-size: 90%;
 }
 
@@ -728,9 +727,9 @@
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
-  color: rgba(27,31,35,.3);
+  color: rgba(27, 31, 35, 0.3);
   cursor: pointer;
-  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
   font-size: 12px;
   line-height: 20px;
   min-width: 50px;
@@ -744,7 +743,7 @@
 }
 
 .markdown-body .blob-num:hover {
-  color: rgba(27,31,35,.6);
+  color: rgba(27, 31, 35, 0.6);
 }
 
 .markdown-body .blob-num:before {
@@ -761,7 +760,7 @@
 
 .markdown-body .blob-code-inner {
   color: #24292e;
-  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
   font-size: 12px;
   overflow: visible;
   white-space: pre;
@@ -782,13 +781,13 @@
   box-shadow: inset 0 -1px 0 #c6cbd1;
   color: #444d56;
   display: inline-block;
-  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font: 11px SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
   line-height: 10px;
   padding: 3px 5px;
   vertical-align: middle;
 }
 
-.markdown-body :checked+.radio-label {
+.markdown-body :checked + .radio-label {
   border-color: #0366d6;
   position: relative;
   z-index: 1;
@@ -858,12 +857,12 @@
   list-style-type: none;
 }
 
-.markdown-body .task-list-item+.task-list-item {
+.markdown-body .task-list-item + .task-list-item {
   margin-top: 3px;
 }
 
 .markdown-body .task-list-item input {
-  margin: 0 .2em .25em -1.6em;
+  margin: 0 0.2em 0.25em -1.6em;
   vertical-align: middle;
 }
 
@@ -872,55 +871,55 @@
 }
 
 .markdown-body .pl-0 {
-  padding-left: 0!important;
+  padding-left: 0 !important;
 }
 
 .markdown-body .pl-1 {
-  padding-left: 4px!important;
+  padding-left: 4px !important;
 }
 
 .markdown-body .pl-2 {
-  padding-left: 8px!important;
+  padding-left: 8px !important;
 }
 
 .markdown-body .pl-3 {
-  padding-left: 16px!important;
+  padding-left: 16px !important;
 }
 
 .markdown-body .pl-4 {
-  padding-left: 24px!important;
+  padding-left: 24px !important;
 }
 
 .markdown-body .pl-5 {
-  padding-left: 32px!important;
+  padding-left: 32px !important;
 }
 
 .markdown-body .pl-6 {
-  padding-left: 40px!important;
+  padding-left: 40px !important;
 }
 
 .markdown-body .pl-7 {
-  padding-left: 48px!important;
+  padding-left: 48px !important;
 }
 
 .markdown-body .pl-8 {
-  padding-left: 64px!important;
+  padding-left: 64px !important;
 }
 
 .markdown-body .pl-9 {
-  padding-left: 80px!important;
+  padding-left: 80px !important;
 }
 
 .markdown-body .pl-10 {
-  padding-left: 96px!important;
+  padding-left: 96px !important;
 }
 
 .markdown-body .pl-11 {
-  padding-left: 112px!important;
+  padding-left: 112px !important;
 }
 
 .markdown-body .pl-12 {
-  padding-left: 128px!important;
+  padding-left: 128px !important;
 }
 
 .markdown-body img {
@@ -930,3 +929,42 @@
   position: relative;
   //border-radius: 10px;
 }
+
+ .table-of-contents {
+  position:relative;
+  border: 3px solid #373e46; /* 枠の色はここを変更してください */
+  background-color: #FFF; /* 背景カラーです */
+  border-radius: 0px 0px 5px 5px;
+  margin-top: 3em; /* 各々の環境で数字を調節してください */
+ }
+ .table-of-contents:after { /* 目次部分 */
+  position: absolute;
+  content: '目次'; /* 表示名を変えたければここを変更 */
+  background: #373e46;
+  color: #fff;
+  right: 0%;
+  left: 0%;
+  bottom: 100%;
+  border-radius: 5px 5px 0 0;
+  padding: 2px 0 2px 0;
+  margin: 0 -3px 0 -3px;/* -で指定しているところはborderと同じ数値にする */
+  text-align:center;
+  font-size: 1.2em;
+  letter-spacing: 2em
+  }
+ .table-of-contents li {
+  font-size:0.9em;
+  font-weight: bold;
+  color:#333;
+ }
+ .table-of-contents a{
+  color:#545454;
+  padding:8px 0;/* 列の間隔 */
+  display: block;
+  text-decoration: none;
+  transition-duration: 0.3s /* カーソルが戻る時間 */
+ }
+ .table-of-contents li a:hover {
+  padding-left: 7px; /* カーソル重ねた時に移動する距離 */
+  transition-duration: 0.3s /* カーソルが移動する時間 */
+ }

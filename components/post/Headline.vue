@@ -67,7 +67,7 @@ export default {
 }
 
 .headline {
-  padding: 10px;
+  padding: 20px;
   top: 10px;
   left: 10px;
 

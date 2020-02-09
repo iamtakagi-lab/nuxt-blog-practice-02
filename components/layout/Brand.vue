@@ -1,14 +1,14 @@
 <template>
   <div>
     <nuxt-link to="/">
-      <h1 v-for="(t, index) in text" :key="index" v-text="t" class="brand delay-anime" />
+      <h1 v-for="(t, index) in brand" :key="index" v-text="t" class="brand delay-anime"/>
     </nuxt-link>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["text"]
+  props: ['brand']
 };
 </script>
 
@@ -30,6 +30,7 @@ export default {
   color: black;
   cursor: pointer;
   text-decoration: none !important;
+  fon-weight: 400;
 
   &:hover {
     text-decoration: none !important;

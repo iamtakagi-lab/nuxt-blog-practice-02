@@ -2,7 +2,7 @@
   <header class="header">
     
     <div class="brand-wrapper">
-      <BrandAnimation :text="brand" class="brand-name"/>
+      <Brand :brand="'manji.fun'" class="brand-name"/>
     </div>
 
   </header>
@@ -10,25 +10,17 @@
 
 <script>
 import $ from "jquery";
-import BrandAnimation from "~/components/layout/BrandAnimation";
+import Brand from "~/components/layout/Brand";
 
 export default {
   name: "Header",
   components: {
-    BrandAnimation
+    Brand
   },
-  data() {
-    return {
-      brand: 'manj!fun',
-    }
-  },
-
 };
 </script>
 
 <style scoped lang = "scss">
-@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
-
 .header {
   margin: 0 auto;
   border-bottom-right-radius: 1em;

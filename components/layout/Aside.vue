@@ -11,24 +11,24 @@
           class="top-post no-decoration no-selection"
         >
         
-          <div class="image">
-            <img :src="topPost.post.fields.heroImage.fields.file.url + '?fit=scale&w=100'"/>
+          <div class="top-post-image">
+            <img :src="topPost.post.fields.heroImage.fields.file.url + '?fit=scale&w=1920&h=1080'" class="top-post-image"/>
 
             <p
-              class="pv"
+              class="rank"
               style="
           position: absolute;
           top: 4px;
           left: 4px;
           display: inline-block;"
-            >{{topPost.pv}}PV</p>
+            >{{i+=1}}位</p>
           </div>
           
 
           <div class="text-content">
             <h2 class="title">{{ topPost.post.fields.title }}</h2>
 
-            <p class="publish-date">{{ new Date(topPost.post.fields.publishDate) | format-date }}</p>
+            <p class="date">{{ new Date(topPost.post.fields.publishDate) | format-date }}</p>
           </div>
       </nuxt-link>
 

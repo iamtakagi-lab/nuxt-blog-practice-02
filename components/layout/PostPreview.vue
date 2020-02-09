@@ -1,8 +1,8 @@
 <template>
   <div>
     <nuxt-link class="article no-decoration no-selection" :to="linkTo('posts', post.fields.slug)">
-      <div class="image">
-        <img :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=1920&h=1080'" class="image"/>
+      <div class="post-preview-image">
+        <img :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=1920&h=1080'" class="post-preview-image"/>
         <p
           class="category"
           style="
@@ -20,7 +20,11 @@
         <p
           class="description"
         >{{ post.fields.description.length >= 30 ? post.fields.description.substring(0, 30) + "..." : post.fields.description }}</p>
-        <p class="publish-date">{{ new Date(post.fields.publishDate) | format-date }}</p>
+        <p class="date">{{ new Date(post.fields.publishDate) | format-date }}</p>
+         <p
+          class="date"
+          v-show="post.fields.lastUpdateDate"
+        >{{ new Date(post.fields.lastUpdateDate) | from-now}}に更新されました</p>
         <div class="tags">
           <p
             v-for="(tag, i) in post.fields.tags"

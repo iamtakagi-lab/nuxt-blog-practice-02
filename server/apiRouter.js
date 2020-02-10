@@ -2,11 +2,6 @@ const express = require('express');
 const router = express.Router();
 const { google } = require('googleapis')
 
-router.get('/status', (req, res) => {
-    res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
-    res.end(JSON.stringify({status: 'ok'}));
-});
-
 router.get('/ga-tops', async (req, res) => {
     const client = await google.auth.getClient({
         keyFile: './keys.json',

@@ -14,7 +14,7 @@
      このGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関して、詳しくは
       <a href = "https://policies.google.com/privacy">ここ</a> をクリックしてください。<br/><br/>
 
-      <span style="font-weight: bold;">また、更なる記事の閲覧性向上を目的とした、「GoogleAPI」から「Googleアナリティクス」のPV数を取得、それをランキングとしてサイトに表示するといったことも行っております。</span>
+      <span style="font-weight: bold;">また、更なる記事の閲覧性向上を目的とした、「GoogleAPIs Analytics Reporting API」から「Googleアナリティクス」のPV数を取得し、ランキングとしてサイトに表示するといったことも行っております。</span>
     </p>
     <h2>
       免責事項

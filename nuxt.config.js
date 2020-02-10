@@ -21,8 +21,9 @@ module.exports = {
       { hid: 'og:url', property: 'og:url', content: 'https://manji.fun/' },
       { hid: 'og:title', property: 'og:title', content: 'manji.fun' },
       { hid: 'og:type', property: 'og:type', content: 'website'},
-      { hid: 'og:image', property: 'og:image', content: '' },
-      { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'og:image', property: 'og:image', content: 'https://i.imgur.com/CngHxmV.jpg' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@notsmatch' },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'manji.fun' },
       { hid: 'og:locale', property: 'og:locale', content: 'ja_JP' }
     ],
@@ -31,6 +32,15 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Fredoka+One&display=swap' }
     ]
+  },
+
+  manifest: {
+    name: "manji.fun",
+    title: "manji.fun",
+    'og:title': 'manji.fun',
+    description: 'manji.fun',
+    'og:description': 'manji.fun',
+    lang: 'ja',
   },
 
   router: {

@@ -1,24 +1,25 @@
 <template>
   <div>
-    <Header/>
+    <Header />
 
     <div class="flex">
-
       <main class="main-container">
-        <nuxt/>
+        <nuxt />
       </main>
 
-      <Aside/>
+      <aside class="aside-container">
+        <Aside />
+      </aside>
     </div>
 
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from "~/components/layout/Header";
 import Aside from "~/components/layout/Aside";
-import Footer from "~/components/layout/Footer"
+import Footer from "~/components/layout/Footer";
 
 export default {
   components: {
@@ -26,7 +27,7 @@ export default {
     Aside,
     Footer
   }
-};
+}
 </script>
 
 <style lang="scss">

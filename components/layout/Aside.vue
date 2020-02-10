@@ -1,38 +1,59 @@
 <template>
-  <aside class="aside-container">
-
+  <div>
     <div class="box">
       <div class="box-title">月間ランキング</div>
- 
-        <nuxt-link
-          v-for="(topPost, i) in topPosts"
-          :key="i"
-          :to="linkTo('posts', topPost.slug)"
-          class="top-post no-decoration no-selection"
-        >
-        
-          <div class="top-post-image">
-            <img :src="topPost.post.fields.heroImage.fields.file.url + '?fit=scale&w=1920&h=1080'" class="top-post-image"/>
 
-            <p
-              class="rank"
-              style="
+      <nuxt-link
+        v-for="(topPost, i) in topPosts"
+        :key="i"
+        :to="linkTo('posts', topPost.slug)"
+        class="top-post no-decoration no-selection"
+      >
+        <div class="top-post-image">
+          <img
+            :src="topPost.post.fields.heroImage.fields.file.url + '?fit=scale&w=1920&h=1080'"
+            class="top-post-image"
+          />
+
+          <p
+            class="rank"
+            style="
           position: absolute;
           top: 4px;
           left: 4px;
           display: inline-block;"
-            >{{i+=1}}位</p>
-          </div>
-          
+          >{{i+=1}}位</p>
+        </div>
 
-          <div class="text-content">
-            <h2 class="title">{{ topPost.post.fields.title }}</h2>
+        <div class="text-content">
+          <h2 class="title">{{ topPost.post.fields.title }}</h2>
 
-            <p class="date">{{ new Date(topPost.post.fields.publishDate) | format-date }}</p>
-          </div>
+          <p class="date">{{ new Date(topPost.post.fields.publishDate) | format-date }}</p>
+        </div>
       </nuxt-link>
+    </div>
 
+    <div class="box">
+      <div class="box-title">最近の記事</div>
+      <nuxt-link
+        v-for="(post, i) in postsByLimit(5)"
+        :key="i"
+        :to="linkTo('posts', post.fields.slug)"
+        class="recent-post no-decoration no-selection"
+      >
+        <div class="recent-post-image">
+          <img
+            :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=1920&h=1080'"
+            class="recent-post-image"
+          />
+        </div>
 
+        <div class="text-content">
+          <h2 class="title">{{ post.fields.title }}</h2>
+
+          <p class="date">{{ new Date(post.fields.publishDate) | format-date }}</p>
+        </div>
+      </nuxt-link>
     </div>
 
     <div class="box">
@@ -71,7 +92,7 @@
         >{{category}}</nuxt-link>
       </p>
     </div>
-  </aside>
+  </div>
 </template>
 
 <script>
@@ -82,7 +103,8 @@ export default {
     ...mapState(["tags"]),
     ...mapState(["categories"]),
     ...mapState(["topPosts"]),
-    ...mapGetters(["linkTo"])
+    ...mapGetters(["linkTo"]),
+    ...mapGetters(["postsByLimit"])
   }
 };
 </script>

@@ -32,12 +32,21 @@ export default {
   z-index: 3;
   overflow: hidden;
 
+   @media screen and (max-width: 768px) {
+     height: 50px;
+   }
+
   .brand-wrapper {
     text-align: center;
     height: 80px;
     line-height: 80px;
     z-index: 10000;
     margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+     height: 50px;
+     line-height: 50px;
+   }
   }
 
   .hamburger-wrapper {

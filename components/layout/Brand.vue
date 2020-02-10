@@ -32,6 +32,10 @@ export default {
   text-decoration: none !important;
   fon-weight: 400;
 
+  @media screen and (max-width: 768px) {
+    font-size: 25px;
+  }
+
   &:hover {
     text-decoration: none !important;
   }

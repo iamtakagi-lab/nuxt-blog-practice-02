@@ -16,8 +16,8 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '自由気ままに書き込んでいきます' },
-      { hid: 'og:description', property: 'og:description', content: '自由気ままに書き込んでいきます'  },
+      { hid: 'description', name: 'description', content: '上級国民ブロガーです' },
+      { hid: 'og:description', property: 'og:description', content: '上級国民ブロガーです'  },
       { hid: 'og:url', property: 'og:url', content: 'https://manji.fun/' },
       { hid: 'og:title', property: 'og:title', content: 'manji.fun' },
       { hid: 'og:type', property: 'og:type', content: 'website'},

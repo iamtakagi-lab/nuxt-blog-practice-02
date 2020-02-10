@@ -38,7 +38,6 @@ html {
 .main-container {
   max-width: calc(100% - 300px);
   animation: fadeIn 2s ease 0s 1 normal;
-  animation: fadeIn 2s ease 0s 1 normal;
 }
 
 .aside-container {
@@ -53,7 +52,7 @@ html {
     max-width: 100%;
   }
   .main-container,
-  .side-container {
+  .aside-container {
     max-width: 100%;
   }
 }
@@ -96,6 +95,7 @@ html {
 }
 
 .box {
+
   margin-top: 10px;
   margin-left: 10px;
   padding: 10px;
@@ -143,7 +143,7 @@ html {
     @media screen and (max-width: 768px) {
       padding: 5px;
       margin: 10px;
-      flex-direction: column;
+      flex-direction: column; 
     }
 
     &:hover {

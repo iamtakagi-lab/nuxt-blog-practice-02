@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <PostPreview
       v-for="(post, i) in $store.state.posts.slice(getStart, getCurrent)"
       :key="i"
@@ -21,6 +22,9 @@
         @click.native="clickCallback(getNext)"
       >次のページ</nuxt-link>
     </div>
+
+    <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=48&l=ur1&category=pc_sale&banner=12VBYRNWJMD5YXN0Q4G2&f=ifr&linkID=ed38ae1167962fb28f4ca76c3b737a96&t=manjifun-22&tracking_id=manjifun-22" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none; margin-top: 10px;" frameborder="0"></iframe>
+    
   </div>
 </template>
 
@@ -37,7 +41,7 @@ export default {
   },
   data() {
     return {
-      parPage: 8
+      parPage: 5
     };
   },
   computed: {

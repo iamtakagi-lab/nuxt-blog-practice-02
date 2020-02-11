@@ -12,7 +12,7 @@
       </aside>
     </div>
 
-    <Footer />
+    <Footer/>
   </div>
 </template>
 

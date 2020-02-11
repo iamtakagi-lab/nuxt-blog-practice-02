@@ -31,6 +31,10 @@
           {{ tag }}
         </nuxt-link>
       </div>
+
+      <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=manjifun-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B07WXL5YPW&linkId=5edc43af0d0aeff6853ed12668eb3d2a&bc1=ffffff&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
+       <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=manjifun-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=4088822048&linkId=b51f58de0b6648bc563d81e8ad27c869&bc1=ffffff&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
+       <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=pc_store&f=ifr&linkID=345d20dfe4282c3b91daa335d70872aa&t=manjifun-22&tracking_id=manjifun-22" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
     </div>
 
      <ShareButtons :post="post"/>

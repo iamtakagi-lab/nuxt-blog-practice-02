@@ -27,5 +27,10 @@ export default {
   background: white;
   max-width: 100%;
   border-radius: 1em;
+
+  @media screen and (max-width: 768px) {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
 }
 </style>

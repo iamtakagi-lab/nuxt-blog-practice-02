@@ -1,5 +1,5 @@
 import defaultEyeCatch from '~/assets/img/jpg/defaultEyeCatch.jpg'
-import {createClient} from '../plugins/contentful'
+import {createClient} from '~/plugins/contentful'
 
 export const state = () => ({
   posts: [],
@@ -140,7 +140,6 @@ export const mutations = {
 }
 
 export const actions = {
-
   async getPosts({ commit, state }) {
     //contentful posts 取得
     await createClient().getEntries({

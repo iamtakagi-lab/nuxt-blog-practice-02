@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header/>
 
     <div class="flex">
       <main class="main-container">

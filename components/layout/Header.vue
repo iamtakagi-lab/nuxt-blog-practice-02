@@ -34,6 +34,8 @@ export default {
 
    @media screen and (max-width: 768px) {
      height: 50px;
+     margin-right: 10px;
+     margin-left: 10px;
    }
 
   .brand-wrapper {

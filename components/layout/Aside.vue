@@ -92,10 +92,14 @@
         >{{category}}</nuxt-link>
       </p>
     </div>
+
+    <Archive/>
+    
   </div>
 </template>
 
 <script>
+import Archive from "~/components/layout/Archive";
 import { mapState, mapGetters } from "vuex";
 export default {
   middleware: "getContentful",
@@ -105,6 +109,9 @@ export default {
     ...mapState(["topPosts"]),
     ...mapGetters(["linkTo"]),
     ...mapGetters(["postsByLimit"])
+  },
+  components: {
+    Archive
   }
 };
 </script>

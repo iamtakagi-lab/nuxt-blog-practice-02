@@ -60,6 +60,25 @@ export const getters = {
 
   postsByLimit: state => (limit) => {
     return state.posts.slice(0, limit);
+  },
+
+  postsByYear: state => (year) => {
+    const posts = []
+    for (let i = 0; i < state.posts.length; i++) {
+      const post = state.posts[i]
+      if (new Date(post.fields.publishDate).getFullYear() === year) posts.push(post)
+    }
+    return posts
+  },
+
+  postsByYearMonth: state => (year, month) => {
+    const posts = []
+    for (let i = 0; i < state.posts.length; i++) {
+      const post = state.posts[i]
+      const date =new Date(post.fields.publishDate);
+      if (date.getFullYear() === year && date.getMonth()+1 === month) posts.push(post)
+    }
+    return posts
   }
 }
 

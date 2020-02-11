@@ -1,7 +1,7 @@
 <template>
     <footer>
         <div class="footer-content">
-             <p>&copy; {{new Date().getFullYear()}}  <nuxt-link to="/" class="no-decoration no-selection" style="color: #777;"> manji.fun </nuxt-link> | Nuxt.js</p>
+             <p>&copy; 2020  <nuxt-link to="/" class="no-decoration no-selection" style="color: #777;"> manji.fun </nuxt-link> | Nuxt.js</p>
              <nuxt-link to="/privacy-policy" class="no-decoration no-selection" style="color: #777;">プライバシーポリシー</nuxt-link>
         </div>
     </footer>

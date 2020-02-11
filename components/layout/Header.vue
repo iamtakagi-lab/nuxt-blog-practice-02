@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header id="header">
     
     <div class="brand-wrapper">
       <Brand :brand="'manji.fun'" class="brand-name"/>
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style scoped lang = "scss">
-.header {
+#header {
   margin: 0 auto;
   border-bottom-right-radius: 1em;
   border-bottom-left-radius: 1em;

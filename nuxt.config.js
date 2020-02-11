@@ -88,13 +88,13 @@ module.exports = {
   */
   plugins: [
     '~/plugins/contentful',
-    '~/plugins/moment-filter'
+    '~/plugins/moment-filter',
+    '~/plugins/vue-scrollto.js'
   ],
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
-
   ],
   /*
   ** Nuxt.js modules
@@ -110,6 +110,7 @@ module.exports = {
     ['@nuxtjs/google-adsense', {
       id: 'ca-pub-7932483299460648'
     }],
+    ['vue-scrollto/nuxt', { duration: 300 }]
   ],
   
   /*

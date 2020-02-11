@@ -17,7 +17,7 @@ router.get('/ga-tops', async (req, res) => {
         requestBody: {
             reportRequests: [
                 {
-                    viewId: '210235281',  // メモしたGoogle Analyticsの ビューIDを入力
+                    viewId: '211210177',  // メモしたGoogle Analyticsの ビューIDを入力
                     dateRanges: [ // 過去30日を集計対象とする
                         {
                             startDate: '30daysAgo',

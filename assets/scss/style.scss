@@ -106,7 +106,8 @@ html {
   text-align: center;
 
   @media screen and (max-width: 768px) {
-    margin-left: 0;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 
   .box-title {
@@ -290,6 +291,8 @@ html {
   @media screen and (max-width: 768px) {
     position: relative;
     flex-direction: column;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 
   &:hover {

@@ -4,11 +4,11 @@
 
     <div class="flex">
       <main class="main-container">
-        <nuxt />
+        <nuxt/>
       </main>
 
       <aside class="aside-container">
-        <Aside />
+        <Aside/>
       </aside>
     </div>
 

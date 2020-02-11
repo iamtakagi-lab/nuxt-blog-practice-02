@@ -75,7 +75,7 @@ export const getters = {
     const posts = []
     for (let i = 0; i < state.posts.length; i++) {
       const post = state.posts[i]
-      const date =new Date(post.fields.publishDate);
+      const date = new Date(post.fields.publishDate);
       if (date.getFullYear() === year && date.getMonth()+1 === month) posts.push(post)
     }
     return posts
@@ -151,7 +151,6 @@ export const actions = {
      await commit('setLinks', res.items)
      await commit('setPosts', res.items)
     
-    
     //Google Analytics 人気記事取得
     state.topPosts = [];
 
@@ -176,7 +175,11 @@ export const actions = {
       const item = rows[i]
       const slug = item.dimensions.toString().split('/')[2];
       const pv = Number(item.metrics[0].values)
-      state.topPosts.push({post: postBySlug(slug), slug: slug, pv: pv})
+
+      const post = postBySlug(slug);
+      if(post) {
+        state.topPosts.push({post: post, slug: slug, pv: pv})
+      }
     }
 
     //console.log(state.topPosts)

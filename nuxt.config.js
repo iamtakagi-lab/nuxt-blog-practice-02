@@ -88,8 +88,7 @@ module.exports = {
   */
   plugins: [
     '~/plugins/contentful',
-    '~/plugins/moment-filter',
-    '~/plugins/vue-scrollto.js'
+    '~/plugins/moment-filter'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -109,8 +108,7 @@ module.exports = {
     }],
     ['@nuxtjs/google-adsense', {
       id: 'ca-pub-7932483299460648'
-    }],
-    ['vue-scrollto/nuxt', { duration: 300 }]
+    }]
   ],
   
   /*

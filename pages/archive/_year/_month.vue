@@ -68,7 +68,7 @@ export default {
   },
   data() {
     return {
-      parPage: 4
+      parPage: 8
     };
   },
   computed: {

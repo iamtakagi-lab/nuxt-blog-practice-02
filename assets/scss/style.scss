@@ -117,6 +117,7 @@ html {
     font-size: 20px;
     color: black;
 
+
     &:before {
       content: "";
       position: absolute;
@@ -398,7 +399,7 @@ html {
 .rank {
   font-size: 13px;
   text-decoration: none !important;
-  padding: 3px;
+  padding: 2px;
   border-radius: 5px;
   background: #f0428b;
   transition: 0.4s;

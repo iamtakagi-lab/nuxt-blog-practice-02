@@ -9,30 +9,32 @@
         :to="linkTo('posts', topPost.slug)"
         class="top-post no-decoration no-selection"
       >
+
+   
         <div class="top-post-image">
           <img
             :src="topPost.post.fields.heroImage.fields.file.url + '?fit=scale&w=1920&h=1080'"
             class="top-post-image"
           />
-
-          <p
+             <p
             class="rank"
             style="
           position: absolute;
-          top: 4px;
-          left: 4px;
+          top: 0;
+          left: 0;
           display: inline-block;"
           >{{i+=1}}位</p>
         </div>
 
         <div class="text-content">
-          <h2 class="title">{{ topPost.post.fields.title }}</h2>
+          <h2 class="title">{{ topPost.post.fields.title.length >= 36 ? topPost.post.fields.title.substring(0, 36) + "..." : topPost.post.fields.title }}</h2>
 
           <p class="date">{{ new Date(topPost.post.fields.publishDate) | format-date }}</p>
         </div>
       </nuxt-link>
     </div>
 
+    <!--
     <div class="box">
       <div class="box-title">最近の記事</div>
       <nuxt-link
@@ -55,6 +57,7 @@
         </div>
       </nuxt-link>
     </div>
+    -->
 
     <div class="box">
       <div class="box-title">タグ</div>

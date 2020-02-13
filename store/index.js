@@ -5,7 +5,7 @@ export const state = () => ({
   posts: [],
   tags: [],
   categories: [],
-  topPosts: []
+  topPosts: [],
 });
 
 export const getters = {

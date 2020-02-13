@@ -1,6 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const { google } = require('googleapis')
+const mail = require('./mail')
+
+router.post('/contact',  (req, res) => {
+    const body = req.body;
+
+    console.log(body);
+
+    mail.send(body.name, body.email, body.message);
+})
 
 router.get('/ga-tops', async (req, res) => {
     const client = await google.auth.getClient({

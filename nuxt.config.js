@@ -88,7 +88,7 @@ module.exports = {
   */
   plugins: [
     '~/plugins/contentful',
-    '~/plugins/moment-filter'
+    '~/plugins/moment-filter',
   ],
   /*
   ** Nuxt.js dev-modules

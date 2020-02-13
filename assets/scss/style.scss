@@ -14,6 +14,15 @@ html {
   font-family: "Noto Sans JP", sans-serif;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
 .flex {
   display: -webkit-flex;
   display: -moz-flex;
@@ -438,6 +447,34 @@ html {
 
   @media screen and (max-width: 768px) {
     font-size: 9px;
+  }
+
+  &:hover {
+    opacity: 0.9;
+    text-decoration: none !important;
+  }
+}
+
+.paginate-btn.is-disabled {
+  background-color: #777;
+  cursor: not-allowed;
+}
+
+.send-btn {
+  font-size: 12px;
+  text-decoration: none !important;
+  padding: 3px 15px;
+  border-radius: 10px;
+  background: #2d8fdd;
+  transition: 0.4s;
+  color: white;
+  user-select: none; /* CSS3 */
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-select: none; /* Safari、Chromeなど */
+  -ms-user-select: none; /* IE10かららしい */
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
   }
 
   &:hover {

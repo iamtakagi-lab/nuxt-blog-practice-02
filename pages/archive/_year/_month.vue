@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div v-if="year !== -1 && month !== -1">  
-      <div class="content-title">{{year}}年{{month}}月のアーカイブ ({{$store.getters.postsByYearMonth(year, month).length}}件)</div>
+    <div v-if="year !== -1 && month !== -1">
+      <div
+        class="content-title"
+      >{{year}}年{{month}}月のアーカイブ ({{$store.getters.postsByYearMonth(year, month).length}}件)</div>
 
       <PostPreview
         v-for="(post, i) in $store.getters.postsByYearMonth(year, month).slice(getStart, getCurrent)"
@@ -13,21 +15,41 @@
         <nuxt-link
           v-show="hasPrev"
           class="paginate-btn"
-          :to="`/archive/${year}/${month}/?page=${getPrev}`"
+          :to="`/archive/${year}/${month}?page=${getPrev}`"
           @click.native="clickCallback(getPrev)"
         >前のページ</nuxt-link>
 
         <nuxt-link
+          v-show="!hasPrev"
+          class="paginate-btn"
+          :class="{ 'is-disabled': true }"
+          :to="`/archive/${year}/${month}?page=${getPrev}`"
+          @click.native="clickCallback(getPrev)"
+        >前のページ</nuxt-link>
+
+        <p
+          style="display: inline-flex;"
+        >{{currentPage}} / {{Math.ceil($store.getters.postsByYearMonth(year, month).length / this.parPage)}}</p>
+
+        <nuxt-link
           v-show="(this.currentPage < Math.ceil($store.getters.postsByYearMonth(year, month).length / this.parPage))"
           class="paginate-btn"
-          :to="`/archive/${year}/${month}/?page=${getNext}`"
+          :to="`/archive/${year}/${month}?page=${getNext}`"
+          @click.native="clickCallback(getNext)"
+        >次のページ</nuxt-link>
+
+        <nuxt-link
+          v-show="!(this.currentPage < Math.ceil($store.getters.postsByYearMonth(year, month).length / this.parPage))"
+          class="paginate-btn"
+          :class="{ 'is-disabled': true }"
+          :to="`/archive/${year}/${month}?page=${getNext}`"
           @click.native="clickCallback(getNext)"
         >次のページ</nuxt-link>
       </div>
     </div>
 
     <div v-else>
-      <div class="content-title">{{year}}年のアーカイブ　({{$store.getters.postsByYear(year).length}}件)</div>
+      <div class="content-title">{{year}}年のアーカイブ ({{$store.getters.postsByYear(year).length}}件)</div>
 
       <PostPreview
         v-for="(post, i) in $store.getters.postsByYear(year).slice(getStart, getCurrent)"
@@ -35,18 +57,38 @@
         :post="post"
       />
 
-      <div>
+       <div>
         <nuxt-link
           v-show="hasPrev"
           class="paginate-btn"
-          :to="`/archive/${year}/?page=${getPrev}`"
+          :to="`/archive/${year}?page=${getPrev}`"
           @click.native="clickCallback(getPrev)"
         >前のページ</nuxt-link>
 
         <nuxt-link
+          v-show="!hasPrev"
+          class="paginate-btn"
+          :class="{ 'is-disabled': true }"
+          :to="`/archive/${year}?page=${getPrev}`"
+          @click.native="clickCallback(getPrev)"
+        >前のページ</nuxt-link>
+
+        <p
+          style="display: inline-flex;"
+        >{{currentPage}} / {{Math.ceil($store.getters.postsByYear(year).length / this.parPage)}}</p>
+
+        <nuxt-link
           v-show="(this.currentPage < Math.ceil($store.getters.postsByYear(year).length / this.parPage))"
           class="paginate-btn"
-          :to="`/archive/${year}/?page=${getNext}`"
+          :to="`/archive/${year}?page=${getNext}`"
+          @click.native="clickCallback(getNext)"
+        >次のページ</nuxt-link>
+
+        <nuxt-link
+          v-show="!(this.currentPage < Math.ceil($store.getters.postsByYear(year).length / this.parPage))"
+          class="paginate-btn"
+          :class="{ 'is-disabled': true }"
+          :to="`/archive/${year}?page=${getNext}`"
           @click.native="clickCallback(getNext)"
         >次のページ</nuxt-link>
       </div>
@@ -61,14 +103,14 @@ export default {
   middleware: "getContentful",
   async asyncData({ params, query, error }) {
     return {
-       year: params.year === undefined ? -1 : Number(params.year),
-       month: params.month === undefined ? -1 : Number(params.month),
-       currentPage: query["page"] === undefined ? 1 : Number(query["page"])
-    }
+      year: params.year === undefined ? -1 : Number(params.year),
+      month: params.month === undefined ? -1 : Number(params.month),
+      currentPage: query["page"] === undefined ? 1 : Number(query["page"])
+    };
   },
   data() {
     return {
-      parPage: 8
+      parPage: 6
     };
   },
   computed: {
@@ -94,7 +136,7 @@ export default {
 
     hasPrev: function() {
       return this.currentPage > 1;
-    },
+    }
   },
   methods: {
     clickCallback(page) {

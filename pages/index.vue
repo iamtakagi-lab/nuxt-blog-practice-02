@@ -16,8 +16,28 @@
       >前のページ</nuxt-link>
 
       <nuxt-link
+        v-show="!hasPrev"
+        class="paginate-btn" 
+        :class="{ 'is-disabled': true }"
+        :to="`/?page=${getPrev}`"
+        @click.native="clickCallback(getPrev)"
+      >前のページ</nuxt-link>
+
+      <p style="display: inline-flex;">
+        {{currentPage}} / {{Math.ceil($store.state.posts.length / this.parPage)}}
+      </p> 
+
+      <nuxt-link
         v-show="(this.currentPage < Math.ceil($store.state.posts.length / this.parPage))"
         class="paginate-btn"
+        :to="`/?page=${getNext}`"
+        @click.native="clickCallback(getNext)"
+      >次のページ</nuxt-link>
+
+      <nuxt-link
+        v-show="!(this.currentPage < Math.ceil($store.state.posts.length / this.parPage))"
+        class="paginate-btn"
+        :class="{ 'is-disabled': true }"
         :to="`/?page=${getNext}`"
         @click.native="clickCallback(getNext)"
       >次のページ</nuxt-link>
@@ -39,7 +59,7 @@ export default {
   },
   data() {
     return {
-      parPage: 5
+      parPage: 6  
     };
   },
   computed: {

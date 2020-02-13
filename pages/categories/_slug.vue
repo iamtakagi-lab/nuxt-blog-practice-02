@@ -17,11 +17,32 @@
       >前のページ</nuxt-link>
 
       <nuxt-link
+        v-show="!hasPrev"
+        class="paginate-btn" 
+        :class="{ 'is-disabled': true }"
+        :to="`/categories/${slug}?page=${getPrev}`"
+        @click.native="clickCallback(getPrev)"
+      >前のページ</nuxt-link>
+
+      <p style="display: inline-flex;">
+        {{currentPage}} / {{Math.ceil($store.getters.postsByCategory(slug).length / this.parPage)}}
+      </p> 
+
+      <nuxt-link
         v-show="(this.currentPage < Math.ceil(this.$store.getters.postsByCategory(slug).length / this.parPage))"
         class="paginate-btn"
         :to="`/categories/${slug}?page=${getNext}`"
         @click.native="clickCallback(getNext, slug)"
       >次のページ</nuxt-link>
+
+       <nuxt-link
+        v-show="!(this.currentPage < Math.ceil($store.getters.postsByCategory(slug).length / this.parPage))"
+        class="paginate-btn"
+        :class="{ 'is-disabled': true }"
+        :to="`/categories/${slug}?page=${getNext}`"
+        @click.native="clickCallback(getNext)"
+      >次のページ</nuxt-link>
+
     </div>
   </div>
 </template>

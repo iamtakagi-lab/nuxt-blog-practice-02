@@ -8,7 +8,7 @@
       :post="post"
     />
 
-    <div class="flex">
+    <div>
       <nuxt-link
         v-show="hasPrev"
         class="paginate-btn"
@@ -17,10 +17,30 @@
       >前のページ</nuxt-link>
 
       <nuxt-link
+        v-show="!hasPrev"
+        class="paginate-btn" 
+        :class="{ 'is-disabled': true }"
+        :to="`/tags/${slug}?page=${getPrev}`"
+        @click.native="clickCallback(getPrev)"
+      >前のページ</nuxt-link>
+
+      <p style="display: inline-flex;">
+        {{currentPage}} / {{Math.ceil($store.getters.postsByTag(slug).length / this.parPage)}}
+      </p> 
+
+      <nuxt-link
         v-show="(this.currentPage < Math.ceil(this.$store.getters.postsByTag(slug).length / this.parPage))"
         class="paginate-btn"
         :to="`/tags/${slug}?page=${getNext}`"
         @click.native="clickCallback(getNext, slug)"
+      >次のページ</nuxt-link>
+
+      <nuxt-link
+        v-show="!(this.currentPage < Math.ceil($store.getters.postsByTag(slug).length / this.parPage))"
+        class="paginate-btn"
+        :class="{ 'is-disabled': true }"
+        :to="`/tags/${slug}?page=${getNext}`"
+        @click.native="clickCallback(getNext)"
       >次のページ</nuxt-link>
     </div>
   </div>

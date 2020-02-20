@@ -96,8 +96,6 @@
       </p>
     </div>
 
-    <Profile/>
-    
     <Archive/>
     
   </div>
@@ -105,7 +103,6 @@
 
 <script>
 import Archive from "~/components/layout/Archive";
-import Profile from "~/components/layout/Profile";
 import { mapState, mapGetters } from "vuex";
 export default {
   middleware: "getContentful",
@@ -117,8 +114,7 @@ export default {
     ...mapGetters(["postsByLimit"])
   },
   components: {
-    Archive,
-    Profile
+    Archive
   }
 };
 </script>

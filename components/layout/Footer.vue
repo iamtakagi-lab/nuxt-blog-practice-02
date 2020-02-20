@@ -2,7 +2,8 @@
     <footer>
         <div class="footer-content">
              <p>&copy; 2020  <nuxt-link to="/" class="no-decoration no-selection" style="color: #777;"> manji.fun </nuxt-link> | Nuxt.js</p>
-             <nuxt-link to="/privacy-policy" class="no-decoration no-selection" style="color: #777;">プライバシーポリシー</nuxt-link>
+             <p><nuxt-link to="/privacy-policy" class="no-decoration no-selection" style="color: #777;">プライバシーポリシー</nuxt-link></p>
+            <p><nuxt-link to="/profile" class="no-decoration no-selection" style="color: #777;">プロフィール</nuxt-link></p>
         </div>
     </footer>
 </template>

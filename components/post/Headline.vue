@@ -31,13 +31,6 @@
           {{ tag }}
         </nuxt-link>
       </div>
-
-      <adsbygoogle
-   :ad-slot="'6899600369'"
-   :ad-style="{ display: 'block' }"
-   :ad-format="'auto'"
-  />
-
       
     </div>
 

@@ -107,7 +107,10 @@ module.exports = {
       id: 'UA-158068455-1'
     }],
     ['@nuxtjs/google-adsense', {
-      id: 'ca-pub-7932483299460648'
+      id: 'ca-pub-7932483299460648',
+      pageLevelAds: true,
+      analyticsUacct: 'UA-158068455-1',
+      analyticsDomainName: 'manji.fun'
     }]
   ],
   

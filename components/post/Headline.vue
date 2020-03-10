@@ -2,6 +2,10 @@
   <div>
     <div class="headline">
       <div class="top">
+         <nuxt-link
+          :to="linkTo('categories', post.fields.category)"
+          class="category"
+        >{{post.fields.category}}</nuxt-link>
         <p class="date">投稿: {{ new Date(post.fields.publishDate) | format-date }}</p>
         <p
           class="date"

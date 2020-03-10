@@ -11,7 +11,7 @@
 <script>
 import ShareButtons from "~/components/post/ShareButtons";
 export default {
-    props: ['post'],
+    props: ["post"],
     components: {
      ShareButtons
   }

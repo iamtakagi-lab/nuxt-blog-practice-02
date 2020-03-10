@@ -516,3 +516,48 @@ button {
     text-decoration: none !important;
   }
 }
+
+
+.mobile-bottom-nav{
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+  z-index:1000;
+  visibility: hidden;
+
+  @media screen and (max-width: 768px) {
+    visibility: visible;
+  }
+	
+	//give nav it's own compsite layer
+	will-change:transform;
+	transform: translateZ(0);
+	
+	display:flex;	
+	
+	height:50px;
+
+  border-top: solid 1px rgb(199, 196, 196);
+	background-color:#fff;
+	
+	&__item{
+		flex-grow:1;
+		text-align:center;
+		font-size:12px;
+		
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+	}
+	&__item--active{
+		//dev
+    color: #2d8fdd;
+    
+	}
+	&__item-content{ 
+		display:flex;
+    flex-direction:column;		
+  }
+}
+

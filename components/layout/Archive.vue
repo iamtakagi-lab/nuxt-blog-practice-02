@@ -10,7 +10,7 @@
             </span>
        
           <ul class="close">
-            <li v-for="month in 2" :key="month">
+            <li v-for="month in new Date().getMonth()+1" :key="month">
             <nuxt-link :to="`/archive/2020/${month}`">2020年{{month}}月 ({{postsByYearMonth(2020, month).length}})</nuxt-link>
             </li>
           </ul>

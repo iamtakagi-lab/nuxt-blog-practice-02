@@ -17,7 +17,7 @@
       </div>
 
       <div class="text-content">
-        <h2 class="title">{{ post.fields.title }}</h2>
+        <h2 class="title no-decoration no-selection">{{ post.fields.title }}</h2>
         <p
           class="description"
         >{{ post.fields.description.length >= 30 ? post.fields.description.substring(0, 30) + "..." : post.fields.description }}</p>

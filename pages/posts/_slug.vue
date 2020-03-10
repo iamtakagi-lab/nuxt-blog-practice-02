@@ -1,7 +1,6 @@
 <template>
   <div>
     <Post :post="post"/>
-    <ScrolltopButton/>
   </div>
 </template>
 

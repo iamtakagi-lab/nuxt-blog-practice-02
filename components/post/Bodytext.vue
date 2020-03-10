@@ -8,7 +8,7 @@
 <script>
     export default {
         name: "Bodytext",
-        props: ['post']
+        props: ["post"]
     }
 </script>
 

@@ -147,6 +147,7 @@ export const actions = {
       order: '-fields.publishDate',
       include: 1
     }).then(async (res) => {
+ 
      await commit('setLinks', res.items)
      await commit('setPosts', res.items)
     

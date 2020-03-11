@@ -16,13 +16,11 @@
         @click.native="clickCallback(getPrev, slug)"
       >前のページ</nuxt-link>
 
-      <nuxt-link
+      <button
         v-show="!hasPrev"
         class="paginate-btn" 
         :class="{ 'is-disabled': true }"
-        :to="`/tags/${slug}?page=${getPrev}`"
-        @click.native="clickCallback(getPrev)"
-      >前のページ</nuxt-link>
+      >前のページ</button>
 
       <p style="display: inline-flex;">
         {{currentPage}} / {{Math.ceil($store.getters.postsByTag(slug).length / this.parPage)}}
@@ -35,13 +33,11 @@
         @click.native="clickCallback(getNext, slug)"
       >次のページ</nuxt-link>
 
-      <nuxt-link
+      <button
         v-show="!(this.currentPage < Math.ceil($store.getters.postsByTag(slug).length / this.parPage))"
         class="paginate-btn"
         :class="{ 'is-disabled': true }"
-        :to="`/tags/${slug}?page=${getNext}`"
-        @click.native="clickCallback(getNext)"
-      >次のページ</nuxt-link>
+      >次のページ</button>
     </div>
   </div>
 </template>

@@ -19,13 +19,11 @@
           @click.native="clickCallback(getPrev)"
         >前のページ</nuxt-link>
 
-        <nuxt-link
+        <button
           v-show="!hasPrev"
           class="paginate-btn"
           :class="{ 'is-disabled': true }"
-          :to="`/archive/${year}/${month}?page=${getPrev}`"
-          @click.native="clickCallback(getPrev)"
-        >前のページ</nuxt-link>
+        >前のページ</button>
 
         <p
           style="display: inline-flex;"
@@ -38,13 +36,11 @@
           @click.native="clickCallback(getNext)"
         >次のページ</nuxt-link>
 
-        <nuxt-link
+        <button
           v-show="!(this.currentPage < Math.ceil($store.getters.postsByYearMonth(year, month).length / this.parPage))"
           class="paginate-btn"
           :class="{ 'is-disabled': true }"
-          :to="`/archive/${year}/${month}?page=${getNext}`"
-          @click.native="clickCallback(getNext)"
-        >次のページ</nuxt-link>
+        >次のページ</button>
       </div>
     </div>
 

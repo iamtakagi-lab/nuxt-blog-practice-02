@@ -2,16 +2,15 @@
   <div>
     <div class="headline">
       <div class="top">
-         <nuxt-link
+        <nuxt-link
           :to="linkTo('categories', post.fields.category)"
           class="category"
         >{{post.fields.category}}</nuxt-link>
         <p class="date">投稿: {{ new Date(post.fields.publishDate) | format-date }}</p>
-        <p
-          class="date"
-          v-show="post.fields.lastUpdateDate"
-        >更新: {{ new Date(post.fields.lastUpdateDate) | format-date }} 
-        ({{ new Date(post.fields.lastUpdateDate) | from-now}})</p>
+        <p class="date" v-show="post.fields.lastUpdateDate">
+          更新: {{ new Date(post.fields.lastUpdateDate) | format-date }}
+          ({{ new Date(post.fields.lastUpdateDate) | from-now}})
+        </p>
       </div>
 
       <h1 class="headline-title">{{post.fields.title}}</h1>
@@ -31,15 +30,13 @@
           {{ tag }}
         </nuxt-link>
       </div>
-      
+
+      <adsbygoogle :ad-slot="'2993553482'" :ad-style="{ display: 'block' }" :ad-format="'auto'" />
     </div>
 
-     <ShareButtons :post="post"/>
+    <ShareButtons :post="post" />
 
-      <img
-        :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=1920&h=1080'"
-        class="img"
-      />
+    <img :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=1920&h=1080'" class="img" />
   </div>
 </template>
 
@@ -59,13 +56,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
 .img {
-    margin-top: 20px;
-    height: auto;
-    max-width: 100%;
-    vertical-align: middle;
-    position: relative;
+  margin-top: 20px;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  position: relative;
 }
 
 .headline {
@@ -103,9 +99,7 @@ export default {
   }
 
   .top {
-
     position: relative;
-
 
     .date {
       display: inline-flex;
@@ -113,9 +107,9 @@ export default {
       color: grey;
       font-size: 15px;
 
-       @media screen and (max-width: 768px) {
-         font-size: 12px;
-       }
+      @media screen and (max-width: 768px) {
+        font-size: 12px;
+      }
     }
   }
 }
